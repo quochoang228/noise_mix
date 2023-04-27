@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:noise_mix/screen/home/home_screen.dart';
+import 'package:noise_mix/screen/meditation/meditation_screen.dart';
+import 'package:noise_mix/screen/profile/profile_screen.dart';
 import 'package:noise_mix/widgets/bottom_nav/animated_bottom_bar.dart';
+import 'package:noise_mix/widgets/codelabs/cupertino_download_button.dart';
+import 'package:noise_mix/widgets/codelabs/drag_and_drop.dart';
+import 'package:noise_mix/widgets/codelabs/expandable_fab.dart';
+import 'package:noise_mix/widgets/codelabs/instagram_filter.dart';
+import 'package:noise_mix/widgets/codelabs/staggered_animation.dart';
+import 'package:noise_mix/widgets/codelabs/typing_indicator.dart';
 
 final rootIndexProvider = StateProvider<int>((ref) => 0);
 
@@ -30,14 +38,16 @@ class _RootState extends ConsumerState<Root> {
         extendBody: true,
         body: IndexedStack(
           index: ref.watch(rootIndexProvider),
-          children: [
-            const HomeScreen(),
-            Container(
-              color: Colors.white,
-            ),
-            Container(
-              color: Colors.blue,
-            ),
+          children: const [
+            HomeScreen(),
+            ExampleUiLoadingAnimation(),
+            // ExampleGradientBubbles(),
+            // ExampleCupertinoDownloadButton(),
+            // ExampleInstagramFilterSelection(),
+            // ExampleIsTyping(),
+            // ExampleStaggeredAnimations(),
+            // ExampleExpandableFab(),
+            ExampleDragAndDrop(),
           ],
         ),
         bottomNavigationBar: SizedBox(
