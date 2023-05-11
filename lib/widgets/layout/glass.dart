@@ -30,7 +30,7 @@ extension GlassWidget<T extends Widget> on T {
       clipBehavior: clipBehaviour,
       borderRadius: clipBorderRadius,
       child: BackdropFilter(
-        filter:  ImageFilter.blur(
+        filter: ImageFilter.blur(
           sigmaX: blurX,
           sigmaY: blurY,
           tileMode: tileMode,
@@ -47,12 +47,12 @@ extension GlassWidget<T extends Widget> on T {
                     ],
                   )
                 : null,
-            image: frosted
-                ? const DecorationImage(
-                    image: AssetImage('images/noise.png', package: 'glass'),
-                    fit: BoxFit.cover,
-                  )
-                : null,
+            // image: frosted
+            //     ? const DecorationImage(
+            //         image: AssetImage('images/noise.png', package: 'glass'),
+            //         fit: BoxFit.cover,
+            //       )
+            //     : null,
           ),
           child: this,
         ),

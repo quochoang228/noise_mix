@@ -108,18 +108,18 @@ class _AnimatedBottomAppBarState extends State<AnimatedBottomAppBar> {
   @override
   Widget build(BuildContext context) {
     return BlurryContainer(
-      blur: 10,
-      color: AppColors.vWhite.withOpacity(0.5),
+      blur: 20,
+      color: AppColors.vBlack.withOpacity(0.3),
       child: Container(
         decoration: const BoxDecoration(
           border: Border(
             top: BorderSide(
-              color: AppColors.vNeutralColor4,
-              width: 1,
+              color: Color(0xff313248),
+              width: 0.5,
             ),
           ),
         ),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -136,13 +136,11 @@ class _AnimatedBottomAppBarState extends State<AnimatedBottomAppBar> {
             // land
             // BottomAppBarItem(
             //   artboard: _landArtboard,
-            //   currentIndex: currentActiveIndex,
+            //   currentIndex: widget.currentActiveIndex,
             //   tabIndex: 1,
             //   input: _landInput,
             //   text: "Sounds",
-            //   cb: () => setState(() {
-            //     currentActiveIndex = 1;
-            //   }),
+            //   cb: () => widget.onTabSelected(0),
             // ),
             // const Gap(5),
             // Mediation
@@ -225,13 +223,12 @@ class BottomAppBarItem extends StatelessWidget {
             child: Text(
               text,
               style: TextStyle(
-                fontSize: 13,
-                fontWeight: currentIndex == tabIndex
-                    ? FontWeight.w600
-                    : FontWeight.normal,
+                fontSize: 10,
+                // fontWeight: FontWeight.w500,
                 color: currentIndex == tabIndex
-                    ? const Color(0xFF020828)
-                    : AppColors.vNeutralColor25,
+                    ? Colors.white
+                    // ? const Color(0xFF020828)
+                    : Color(0xff595A61),
               ),
             ),
           ),

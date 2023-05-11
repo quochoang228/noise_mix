@@ -17,6 +17,8 @@ dependencies:
   go_router: ^6.5.8
   rive: ^0.10.4
   gap: ^3.0.0
+  palette_generator: ^0.3.3+2
+  google_fonts: ^4.0.4
 
 dev_dependencies:
   flutter_test:

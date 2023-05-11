@@ -47,7 +47,9 @@ class _RootState extends ConsumerState<Root> {
             // ExampleIsTyping(),
             // ExampleStaggeredAnimations(),
             // ExampleExpandableFab(),
-            ExampleDragAndDrop(),
+            // ExampleDragAndDrop(),
+            // ExampleGradientBubbles()
+            ProfileScreen()
           ],
         ),
         bottomNavigationBar: SizedBox(

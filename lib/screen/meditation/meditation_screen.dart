@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const _shimmerGradient = LinearGradient(
   colors: [
@@ -42,29 +43,59 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Shimmer(
-          linearGradient: _shimmerGradient,
-          child: ListView(
-            physics: _isLoading ? const NeverScrollableScrollPhysics() : null,
-            children: [
-              const SizedBox(height: 16),
-              _buildTopRowList(),
-              const SizedBox(height: 16),
-              _buildListItem(),
-              _buildListItem(),
-              _buildListItem(),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [
+              Color(0xffF0F0FE),
+              Colors.white,
+              Colors.white,
+              Colors.white,
+              Colors.white,
+              Color(0xffE1E1FD),
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _toggleLoading,
-        child: Icon(
-          _isLoading ? Icons.hourglass_full : Icons.hourglass_bottom,
+        width: double.maxFinite,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Email',
+              style: GoogleFonts.inter(
+                color: const Color(0xff5353C6),
+              ),
+            )
+          ],
         ),
       ),
     );
+    // return Scaffold(
+    //   body: SafeArea(
+    //     child: Shimmer(
+    //       linearGradient: _shimmerGradient,
+    //       child: ListView(
+    //         physics: _isLoading ? const NeverScrollableScrollPhysics() : null,
+    //         children: [
+    //           const SizedBox(height: 16),
+    //           _buildTopRowList(),
+    //           const SizedBox(height: 16),
+    //           _buildListItem(),
+    //           _buildListItem(),
+    //           _buildListItem(),
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    //   floatingActionButton: FloatingActionButton(
+    //     onPressed: _toggleLoading,
+    //     child: Icon(
+    //       _isLoading ? Icons.hourglass_full : Icons.hourglass_bottom,
+    //     ),
+    //   ),
+    // );
   }
 
   Widget _buildTopRowList() {

@@ -35,7 +35,7 @@ Future<void> bootstrap({required Widget app}) async {
       systemNavigationBarColor: Colors.black,
 
       // background Navigation
-      statusBarIconBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.light,
     ),
   );
 

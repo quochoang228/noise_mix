@@ -1,9 +1,12 @@
+import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:noise_mix/contants/colors.dart';
 import 'package:noise_mix/contants/shadow.dart';
+import 'package:noise_mix/widgets/animations/avatar.dart';
+import 'package:noise_mix/widgets/animations/dots_loading.dart';
 import 'package:noise_mix/widgets/appbar/appbar_empty.dart';
 import 'package:noise_mix/widgets/layout/blurry_container.dart';
 import 'package:noise_mix/widgets/layout/glass.dart';
@@ -71,7 +74,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     padding: const EdgeInsets.only(bottom: 12),
                     child: Column(
                       children: [
-                        Expanded(child: Container()),
+                        Expanded(
+                            child: Column(
+                          children: [
+                            AvatarAnimation(),
+                            const DotsLoader(),
+                          ],
+                        )),
                         Icon(Icons.shuffle_rounded),
                         Icon(Icons.pause),
                         Icon(Icons.cabin),
